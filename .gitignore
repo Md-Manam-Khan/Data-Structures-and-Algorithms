@@ -1,0 +1,17 @@
+# Old scratch / practice folder — not part of the tracked topic list
+New folder/
+
+# Compiled binaries
+*.exe
+*.out
+*.o
+*.obj
+
+# IDE / Editor clutter
+.vscode/
+.vs/
+*.user
+
+# OS junk files
+.DS_Store
+Thumbs.db
