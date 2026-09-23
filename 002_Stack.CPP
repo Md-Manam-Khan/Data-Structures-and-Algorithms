@@ -49,7 +49,7 @@ void pop (int (&a)[max])
     }
     else
     {
-        cout<<"\nPoped element: "<<a[top]<<"\n";
+        cout<<"\nPoped element: "<<a[top]<<"\n\n";
         --top;
     }
 }
