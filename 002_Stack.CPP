@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define max 100
-int top = -1, x;
+int top = -1, x, y;
 int checkFull (int (&a)[max])
 {
-    if (top >= max)
+    if (top >= (max -1))
     {
         return 1;
     }
@@ -34,9 +34,9 @@ void push (int (&a)[max])
     else
     {
         cout<<"\nInput the element you want to push: ";
-        cin>>x;
+        cin>>y;
         ++top;
-        a[top] = x;
+        a[top] = y;
         cout<<"\n";
     }
 }
@@ -71,7 +71,7 @@ int main ()
     while(1)
     {
         cout<<"Choose an option: ";
-        cout<<"\n1. Push\n2. Pop\n3. Peek\n4. Check\n\nI choose: ";
+        cout<<"\n1. Push\n2. Pop\n3. Peek\n4. Check\n5. Bye\n\nI choose: ";
         cin>>c;
         switch(c)
         {
@@ -94,8 +94,9 @@ int main ()
             {
                 while(1)
                 {
+                    back:
                     cout<<"\nI want to check: ";
-                    cout<<"\n1. If empty\n2. If full\nI choose: ";
+                    cout<<"\n1. If full\n2. If empty\nI choose: ";
                     cin>>m;
                     switch(m)
                     {
@@ -127,10 +128,17 @@ int main ()
                         }
                         default:
                         {
-                            cout<<"\bChoose again";
+                            cout<<"\nWrong option chosen";
+                            goto back;
                         }
                     }
+                    break;
                 }
+            }
+            case 5:
+            {
+                cout<<"\nGood bye";
+                return 0;
             }
             default:
             {
