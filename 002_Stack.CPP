@@ -29,7 +29,7 @@ void push (int (&a)[max])
     x = checkFull(a);
     if (x == 1)
     {
-        cout<<"Can't push anymore, stack full!";
+        cout<<"\nCan't push anymore, stack full!\n";
     }
     else
     {
@@ -37,6 +37,7 @@ void push (int (&a)[max])
         cin>>x;
         ++top;
         a[top] = x;
+        cout<<"\n";
     }
 }
 void pop (int (&a)[max])
@@ -44,20 +45,25 @@ void pop (int (&a)[max])
     x = checkEmpty(a);
     if (x == 1)
     {
-        cout<<"Can't pop anymore, stack empty!";
+        cout<<"\nCan't pop anymore, stack empty!\n";
     }
     else
     {
-        cout<<"\nInput the element you want to push: ";
-        cin>>x;
-        ++top;
-        a[top] = x;
+        cout<<"\nPoped element: "<<a[top]<<"\n";
+        --top;
     }
 }
 void peek (int (&a)[max])
 {
-    x = checkFull(a);
-    cout<<"The element on the top is: "<<a[top];
+    x = checkEmpty(a);
+    if (x == 1)
+    {
+        cout<<"\nCan't peek, stack empty!";
+    }
+    else
+    {
+        cout<<"\nTop element: "<<a[top]<<"\n";
+    }
 }
 int main ()
 {
@@ -65,7 +71,7 @@ int main ()
     while(1)
     {
         cout<<"Choose an option: ";
-        cout<<"1. Push\n2. Pop\n3. Peek\n 4. Check\n\nI choose: ";
+        cout<<"\n1. Push\n2. Pop\n3. Peek\n4. Check\n\nI choose: ";
         cin>>c;
         switch(c)
         {
@@ -86,12 +92,12 @@ int main ()
             }
             case 4:
             {
-                cout<<"\nI want to check: ";
-                cout<<"\n1. If empty\n2. If full";
-                cin>>m;
-                switch(m)
+                while(1)
                 {
-                    while(1)
+                    cout<<"\nI want to check: ";
+                    cout<<"\n1. If empty\n2. If full\nI choose: ";
+                    cin>>m;
+                    switch(m)
                     {
                         case 1:
                         {
