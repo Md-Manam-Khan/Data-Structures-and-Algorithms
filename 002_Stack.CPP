@@ -94,7 +94,6 @@ int main ()
             {
                 while(1)
                 {
-                    back:
                     cout<<"\nI want to check: ";
                     cout<<"\n1. If full\n2. If empty\nI choose: ";
                     cin>>m;
@@ -129,11 +128,11 @@ int main ()
                         default:
                         {
                             cout<<"\nWrong option chosen";
-                            goto back;
                         }
                     }
                     break;
                 }
+                break;
             }
             case 5:
             {
